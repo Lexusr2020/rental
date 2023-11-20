@@ -3,4 +3,3 @@ streamlit==1.28.1
 plotly==5.10.0
 matplotlib==3.5.2
 seaborn==0.12.2
-PIL==9.4.0
