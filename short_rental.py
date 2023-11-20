@@ -26,7 +26,7 @@ st.title(":chart_with_upwards_trend: Pillow Palooza NYC Short-Term Rentals")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # Read in data
-os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\Data")
+os.chdir(r"/mount/src/rental/Data")
 df = pd.read_csv("pillow_final.csv", usecols=['latitude', 'longitude'])
 
 st.map(df.head(5000))
@@ -91,17 +91,17 @@ st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allo
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\Data")
+    os.chdir(r"/mount/src/rental/Data")
     price_df = pd.read_csv("prices.csv", encoding = "ISO-8859-1")
     st.write(price_df.head())
 
 with col2:
-    os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\Data")
+    os.chdir(r"/mount/src/rental/Data")
     room_type_df = pd.read_excel("room_types.xlsx")
     st.write(room_type_df.head())
 
 with col3:
-    os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\Data")
+    os.chdir(r"/mount/src/rental/Data")
     review_df = pd.read_csv("reviews.tsv", delimiter= '\t', encoding = "ISO-8859-1")
     st.dataframe(review_df.head()) 
     
@@ -162,7 +162,7 @@ st.markdown(part_2_text)
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # Read in data
-os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\Data")
+os.chdir(r"/mount/src/rental/Data")
 df = pd.read_csv("pillow_final.csv")
 
 del df['Unnamed: 0.2']
@@ -253,7 +253,7 @@ st.markdown(price_text)
 
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
-os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\images")
+os.chdir(r"/mount/src/rental/images")
 price_distribution_image = Image.open('price_distribution.png')
 
 price_mean = np.round(data["price"].mean(), 2)
@@ -680,7 +680,7 @@ with contact_col2:
 
     st.markdown(contact_form, unsafe_allow_html=True)
 
-    os.chdir(r"C:\Users\lexro\OneDrive\Desktop\streamlit\Rental\style")
+    os.chdir(r"/mount/src/rental/style")
     style_file = 'style.css'
 
     # Use Local CSS File
